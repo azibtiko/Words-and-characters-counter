@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 50px 100px;
+        } 
+        #heading {
+            text-align: center;
+            background: #0067B0;
+            padding:11px;
+            color: white;
+        }
+        #container{
+            text-align: center;
+        }
+        textarea{
+            width: 99.3%;
+            margin-top: -23px;
+            border-color:#0067B0 ;
+            font-size: 20px;
+        }
+        #para{
+            background: #0067B0;
+            padding:11px;
+            margin-top:-3px ; 
+            color: white;
+        }
+
+        /* let make its Responsive */
+
+        @media only screen and ( max-width: 622px  ){
+            body{
+            padding:     15px 43px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+   <h1 id="heading">Word and character counter</h1>
+   <div id="container">
+  <div>
+   <textarea id="textArea" cols="30" rows="10"></textarea>
+</div>
+<div>
+    <p id="para">
+        <span id="word" >0</span> words and <span id="char">0</span> characters 
+    </p>
+</div>
+</div>
+
+
+<script>
+   let textarea = document.getElementById("textArea");
+   textarea.addEventListener("input",function(){
+       let val = this.value;
+       let char = val.length;
+       let chars = document.getElementById("char");
+      
+       chars.innerHTML = char;
+
+      
+
+   }) 
+   textarea.addEventListener("input",function(){
+       let val = this.value;
+       let spl = val.split(" ");
+       let chars = document.getElementById("word");
+       word.innerHTML = spl.length;
+       
+
+      
+
+   })
+        
+
+     
+   
+
+
+</script>
+</body>
+</html>
